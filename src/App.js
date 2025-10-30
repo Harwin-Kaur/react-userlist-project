@@ -1,11 +1,14 @@
 import './App.css';
 
-function App() {
+const App = () => {
    
-    return <div>Hello
+    return ( <div>
+      {/* form component here */}
 
-      <button className='btn btn-danger'></button>
-    </div>;
+
+      {/* table component here */}
+    </div>
+    );
 }
 
 export default App;
