@@ -14,20 +14,18 @@ export const UserTable = ({userList}) => {
     </tr>
   </thead>
   <tbody>
-    {
-      userList.map((user, i) => (<tr>
-        <td key={i}></td>
-      <th scope="row">{i + 1}</th>
-      
-     <td>{user.gender === "m" ? <MaleAvatars /> : <FemaleAvatars />}</td> 
-      {/*conditional rendering in react */}
-      <td style={{ color: user.gender === "m" ? "blue" : "pink" }}>{user.name}</td>
+  {userList.map((user, i) => (
+    <tr key={i}>
+      <td>{i + 1}</td>
+      <td>{user.gender === "m" ? <MaleAvatars /> : <FemaleAvatars />}</td>
+      <td style={{ color: user.gender === "m" ? "blue" : "pink" }}>
+        {user.name}
+      </td>
       <td>{user.gender}</td>
     </tr>
-    ))
-    }
-    
-  </tbody>
+  ))}
+</tbody>
+
 </table>
     </div>
   )

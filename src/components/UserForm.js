@@ -9,6 +9,7 @@ export const UserForm = ({addUser}) => {
     // console.log(name, value);
 
     setUser({
+      ...user,
       [name]: value,
     })
   };
