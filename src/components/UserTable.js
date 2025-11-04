@@ -1,36 +1,32 @@
 import React from 'react'
+import {MaleAvatars, FemaleAvatars } from './Avatars'
 
-export const UserTable = () => {
+export const UserTable = ({userList}) => {
   return (
     <div className='mt-5 shadow-lg p-2 rounded'>
       <table className="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Avatar</th>
+      <th scope="col">Name</th>
+      <th scope="col">Gender</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    {
+      userList.map((user, i) => (<tr>
+        <td key={i}></td>
+      <th scope="row">{i + 1}</th>
+      
+     <td>{user.gender === "m" ? <MaleAvatars /> : <FemaleAvatars />}</td> 
+      {/*conditional rendering in react */}
+      <td style={{ color: user.gender === "m" ? "blue" : "pink" }}>{user.name}</td>
+      <td>{user.gender}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colSpan="2">John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
+    ))
+    }
+    
   </tbody>
 </table>
     </div>

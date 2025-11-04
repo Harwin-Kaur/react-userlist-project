@@ -1,11 +1,17 @@
+import { useState } from 'react';
 import './App.css';
 import  { UserForm }  from './components/UserForm';
 import { UserTable } from './components/UserTable';
 
 const App = () => {
 
-  const addUser = (userObj) => {
-    console.log(userObj);
+   const [userList, setUserList] = useState([]);
+   const addUser = (userObj) => {
+
+    setUserList([...userList, userObj]);
+// console.log(userObj);
+   
+  //  console.log(userList);
   };
    
     return ( 
@@ -16,7 +22,7 @@ const App = () => {
       <UserForm addUser={addUser}/>
 
       {/* table component here */}
-      <UserTable />
+      <UserTable userList={userList}/>
     </div>
     );
 }
