@@ -13,7 +13,7 @@ export const UserForm = ({addUser}) => {
       [name]: value,
     })
   };
-// console.log(user);
+console.log(user);
 
 const handleOnSubmit = e => {
   e.preventDefault();
